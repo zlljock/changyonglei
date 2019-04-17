@@ -57,7 +57,7 @@ public class Demo1 {
         }
     }
     /**
-     * 4.2 将一个字符串中所有的ip地址打印出来
+     *
      */
     @Test
     public void text3(){
@@ -70,6 +70,22 @@ public class Demo1 {
 //      System.out.print(stringBuffer.toString());
 
     }
+
+    /**
+     * 4.4 将连续出现的abc用一个abc代替。---选做
+     */
+    @Test
+    public void text4(){
+        Pattern pattern = Pattern.compile("(abc)\\1*");
+        Matcher matcher = pattern.matcher("abcabcabcglkjfwekfjlekt4");
+      StringBuffer stringBuffer = new StringBuffer();
+        while (matcher.find()) {
+            System.out.print(matcher.group(1));
+        }
+        matcher.appendTail(stringBuffer);
+     System.out.print(stringBuffer.toString());
+    }
+
 
 
 }
