@@ -41,4 +41,35 @@ public class Demo1 {
         Matcher matcher1 = pattern.matcher("(001)1234-3214");
         System.out.println("(10000)1234-4567：" + matcher1.matches());
     }
+
+
+    /**
+     * 4.2 将一个字符串中所有的ip地址打印出来
+     */
+    @Test
+    public void text2(){
+        String bString="181.116.222.99";
+        String regEx="((2[0-4]\\d|25[0-5]|[01]?\\d\\d?)\\.){3}(2[0-4]\\d|25[0-5]|[01]?\\d\\d?)";
+        Pattern pattern = Pattern.compile(regEx);
+        Matcher matcher = pattern.matcher(bString);
+        while (matcher.find()) {
+            System.out.println("IP:" + matcher.group());
+        }
+    }
+    /**
+     * 4.2 将一个字符串中所有的ip地址打印出来
+     */
+    @Test
+    public void text3(){
+        Pattern pattern = Pattern.compile("(\\w)\\1*");
+        Matcher matcher = pattern.matcher("aaabbbccccd");
+//        StringBuffer stringBuffer = new StringBuffer();
+        while (matcher.find()) {
+            System.out.print(matcher.group(1));
+       }
+//      System.out.print(stringBuffer.toString());
+
+    }
+
+
 }
